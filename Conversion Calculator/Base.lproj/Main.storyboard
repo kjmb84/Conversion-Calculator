@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Converter View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ConverterViewController" customModule="Conversion_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,218 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YmM-ho-Np3">
+                                <rect key="frame" x="0.0" y="20" width="375" height="92.5"/>
+                                <color key="backgroundColor" red="0.86274509803921573" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iuv-B3-9Ql">
+                                <rect key="frame" x="0.0" y="112.5" width="375" height="92.5"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQw-Bt-bGh">
+                                <rect key="frame" x="0.0" y="205" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ip6-Sh-Xi8">
+                                <rect key="frame" x="125" y="205" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="+/-">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38W-wC-XL1">
+                                <rect key="frame" x="250" y="205" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Converter">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="converterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0X1-2e-Lgm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2g-oY-3ba">
+                                <rect key="frame" x="0.0" y="297.5" width="125" height="92"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i61-AY-QVD">
+                                <rect key="frame" x="125" y="297.5" width="125" height="92"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9yO-TY-WOA">
+                                <rect key="frame" x="250" y="297.5" width="125" height="92"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOv-ZA-t5h">
+                                <rect key="frame" x="0.0" y="389.5" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43a-Qg-J5M">
+                                <rect key="frame" x="125" y="389.5" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-UT-UdS">
+                                <rect key="frame" x="250" y="389.5" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnC-Ug-g1P">
+                                <rect key="frame" x="0.0" y="482" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDH-UM-hgM">
+                                <rect key="frame" x="125" y="482" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klv-6S-IiM">
+                                <rect key="frame" x="250" y="482" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4m-B4-RRs">
+                                <rect key="frame" x="0.0" y="574.5" width="250" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbj-2u-nJV">
+                                <rect key="frame" x="250" y="574.5" width="125" height="92.5"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="40"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="width" secondItem="D2g-oY-3ba" secondAttribute="width" id="1Cj-jc-Q0A"/>
+                            <constraint firstItem="o4m-B4-RRs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Oy-df-EbU"/>
+                            <constraint firstItem="ip6-Sh-Xi8" firstAttribute="top" secondItem="Iuv-B3-9Ql" secondAttribute="bottom" id="2IX-nW-pQa"/>
+                            <constraint firstItem="ip6-Sh-Xi8" firstAttribute="width" secondItem="kQw-Bt-bGh" secondAttribute="width" id="2wj-78-okK"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="height" secondItem="kQw-Bt-bGh" secondAttribute="height" id="4ld-1i-K6C"/>
+                            <constraint firstItem="D2g-oY-3ba" firstAttribute="top" secondItem="kQw-Bt-bGh" secondAttribute="bottom" id="5XS-sQ-vaA"/>
+                            <constraint firstItem="D2g-oY-3ba" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6UU-xY-udw"/>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="top" secondItem="ip6-Sh-Xi8" secondAttribute="bottom" id="8BM-ZS-OBa"/>
+                            <constraint firstAttribute="trailing" secondItem="YmM-ho-Np3" secondAttribute="trailing" id="A40-7H-lbp"/>
+                            <constraint firstItem="38W-wC-XL1" firstAttribute="leading" secondItem="ip6-Sh-Xi8" secondAttribute="trailing" id="BB8-NA-kRs"/>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="height" secondItem="kQw-Bt-bGh" secondAttribute="height" id="Cqn-pQ-07J"/>
+                            <constraint firstItem="YmM-ho-Np3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dfg-Ab-aeb"/>
+                            <constraint firstItem="Iuv-B3-9Ql" firstAttribute="height" secondItem="YmM-ho-Np3" secondAttribute="height" id="DtB-bC-M5r"/>
+                            <constraint firstItem="MOv-ZA-t5h" firstAttribute="height" secondItem="D2g-oY-3ba" secondAttribute="height" id="Feq-Wc-5XR"/>
+                            <constraint firstItem="UDH-UM-hgM" firstAttribute="width" secondItem="YnC-Ug-g1P" secondAttribute="width" id="Fwk-vI-D5p"/>
+                            <constraint firstItem="ip6-Sh-Xi8" firstAttribute="leading" secondItem="kQw-Bt-bGh" secondAttribute="trailing" id="G0k-0A-hoK"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="top" secondItem="ip6-Sh-Xi8" secondAttribute="bottom" id="G5o-bl-Tbn"/>
+                            <constraint firstItem="43a-Qg-J5M" firstAttribute="top" secondItem="i61-AY-QVD" secondAttribute="bottom" id="Gm6-wF-aj3"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="width" secondItem="D2g-oY-3ba" secondAttribute="width" id="Hbk-jG-1v3"/>
+                            <constraint firstItem="YnC-Ug-g1P" firstAttribute="height" secondItem="MOv-ZA-t5h" secondAttribute="height" id="Ith-6A-cd0"/>
+                            <constraint firstItem="UDH-UM-hgM" firstAttribute="leading" secondItem="YnC-Ug-g1P" secondAttribute="trailing" id="JHs-Ms-Spy"/>
+                            <constraint firstItem="D2g-oY-3ba" firstAttribute="height" secondItem="kQw-Bt-bGh" secondAttribute="height" id="JmM-FT-V3K"/>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="leading" secondItem="D2g-oY-3ba" secondAttribute="trailing" id="KAf-UW-b3t"/>
+                            <constraint firstAttribute="trailing" secondItem="Tbj-2u-nJV" secondAttribute="trailing" id="KrD-N9-dJe"/>
+                            <constraint firstItem="ip6-Sh-Xi8" firstAttribute="height" secondItem="kQw-Bt-bGh" secondAttribute="height" id="LZt-ic-iat"/>
+                            <constraint firstItem="MOv-ZA-t5h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OXX-l3-nOr"/>
+                            <constraint firstItem="UDH-UM-hgM" firstAttribute="top" secondItem="43a-Qg-J5M" secondAttribute="bottom" id="OsZ-mb-oKq"/>
+                            <constraint firstItem="kQw-Bt-bGh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OuZ-zn-CcD"/>
+                            <constraint firstItem="o4m-B4-RRs" firstAttribute="height" secondItem="YnC-Ug-g1P" secondAttribute="height" id="PMj-KF-8UM"/>
+                            <constraint firstItem="Tbj-2u-nJV" firstAttribute="top" secondItem="UDH-UM-hgM" secondAttribute="bottom" id="PtK-94-NhM"/>
+                            <constraint firstItem="UAf-UT-UdS" firstAttribute="width" secondItem="MOv-ZA-t5h" secondAttribute="width" id="Qt0-qG-JQ5"/>
+                            <constraint firstItem="UAf-UT-UdS" firstAttribute="top" secondItem="9yO-TY-WOA" secondAttribute="bottom" id="R0O-5L-lWy"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="leading" secondItem="i61-AY-QVD" secondAttribute="trailing" id="R58-Ud-p6k"/>
+                            <constraint firstItem="YnC-Ug-g1P" firstAttribute="top" secondItem="MOv-ZA-t5h" secondAttribute="bottom" id="S8x-sT-zqS"/>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="top" secondItem="kQw-Bt-bGh" secondAttribute="bottom" id="SdD-XT-t9X"/>
+                            <constraint firstItem="38W-wC-XL1" firstAttribute="leading" secondItem="ip6-Sh-Xi8" secondAttribute="trailing" id="TAR-Qr-nkA"/>
+                            <constraint firstItem="YmM-ho-Np3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UCN-uX-EkC"/>
+                            <constraint firstItem="Tbj-2u-nJV" firstAttribute="height" secondItem="YnC-Ug-g1P" secondAttribute="height" id="Ucn-Tg-aEJ"/>
+                            <constraint firstItem="UDH-UM-hgM" firstAttribute="height" secondItem="MOv-ZA-t5h" secondAttribute="height" id="Vsu-II-wic"/>
+                            <constraint firstItem="38W-wC-XL1" firstAttribute="top" secondItem="Iuv-B3-9Ql" secondAttribute="bottom" id="W5y-8f-Y1u"/>
+                            <constraint firstItem="UAf-UT-UdS" firstAttribute="leading" secondItem="43a-Qg-J5M" secondAttribute="trailing" id="WCx-LL-Qz0"/>
+                            <constraint firstItem="UAf-UT-UdS" firstAttribute="leading" secondItem="43a-Qg-J5M" secondAttribute="trailing" id="Wym-GV-cop"/>
+                            <constraint firstItem="Tbj-2u-nJV" firstAttribute="width" secondItem="o4m-B4-RRs" secondAttribute="width" multiplier="1:2" id="Xzo-9m-anz"/>
+                            <constraint firstItem="Iuv-B3-9Ql" firstAttribute="top" secondItem="YmM-ho-Np3" secondAttribute="bottom" id="YHO-xq-O53"/>
+                            <constraint firstItem="ip6-Sh-Xi8" firstAttribute="leading" secondItem="kQw-Bt-bGh" secondAttribute="trailing" id="YhU-bS-zgA"/>
+                            <constraint firstItem="UAf-UT-UdS" firstAttribute="height" secondItem="D2g-oY-3ba" secondAttribute="height" id="aNi-tW-FOF"/>
+                            <constraint firstItem="38W-wC-XL1" firstAttribute="width" secondItem="kQw-Bt-bGh" secondAttribute="width" id="aUU-u0-0w4"/>
+                            <constraint firstItem="43a-Qg-J5M" firstAttribute="height" secondItem="D2g-oY-3ba" secondAttribute="height" id="bCD-Px-dkj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="o4m-B4-RRs" secondAttribute="bottom" id="bKl-7Q-hO8"/>
+                            <constraint firstItem="i61-AY-QVD" firstAttribute="leading" secondItem="D2g-oY-3ba" secondAttribute="trailing" id="cdR-dN-x1j"/>
+                            <constraint firstItem="klv-6S-IiM" firstAttribute="height" secondItem="MOv-ZA-t5h" secondAttribute="height" id="cjp-E0-LK4"/>
+                            <constraint firstItem="kQw-Bt-bGh" firstAttribute="top" secondItem="Iuv-B3-9Ql" secondAttribute="bottom" id="eh8-fY-qia"/>
+                            <constraint firstItem="38W-wC-XL1" firstAttribute="height" secondItem="kQw-Bt-bGh" secondAttribute="height" id="fAr-tm-0BJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Iuv-B3-9Ql" secondAttribute="trailing" id="fnC-2q-Imn"/>
+                            <constraint firstItem="43a-Qg-J5M" firstAttribute="leading" secondItem="MOv-ZA-t5h" secondAttribute="trailing" id="hi9-c7-pl5"/>
+                            <constraint firstItem="Iuv-B3-9Ql" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jNO-Rg-Syw"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="top" secondItem="38W-wC-XL1" secondAttribute="bottom" id="ja0-yj-Fu1"/>
+                            <constraint firstItem="43a-Qg-J5M" firstAttribute="width" secondItem="MOv-ZA-t5h" secondAttribute="width" id="jbn-dw-sBl"/>
+                            <constraint firstItem="klv-6S-IiM" firstAttribute="leading" secondItem="UDH-UM-hgM" secondAttribute="trailing" id="k6b-pk-zaJ"/>
+                            <constraint firstAttribute="trailing" secondItem="UAf-UT-UdS" secondAttribute="trailing" id="kJC-ls-1SG"/>
+                            <constraint firstAttribute="trailing" secondItem="klv-6S-IiM" secondAttribute="trailing" id="kni-3B-knc"/>
+                            <constraint firstItem="43a-Qg-J5M" firstAttribute="leading" secondItem="MOv-ZA-t5h" secondAttribute="trailing" id="mSr-vV-Ms9"/>
+                            <constraint firstItem="kQw-Bt-bGh" firstAttribute="height" secondItem="YmM-ho-Np3" secondAttribute="height" id="nQg-3P-JGT"/>
+                            <constraint firstItem="MOv-ZA-t5h" firstAttribute="top" secondItem="D2g-oY-3ba" secondAttribute="bottom" id="oik-mo-jbv"/>
+                            <constraint firstItem="D2g-oY-3ba" firstAttribute="top" secondItem="kQw-Bt-bGh" secondAttribute="bottom" id="qQ9-44-7Gw"/>
+                            <constraint firstItem="klv-6S-IiM" firstAttribute="width" secondItem="YnC-Ug-g1P" secondAttribute="width" id="qW6-iC-jAs"/>
+                            <constraint firstAttribute="trailing" secondItem="Iuv-B3-9Ql" secondAttribute="trailing" id="qpp-d6-tYl"/>
+                            <constraint firstItem="Tbj-2u-nJV" firstAttribute="leading" secondItem="o4m-B4-RRs" secondAttribute="trailing" id="r8w-hZ-Fan"/>
+                            <constraint firstAttribute="trailing" secondItem="38W-wC-XL1" secondAttribute="trailing" id="rfh-C7-cxj"/>
+                            <constraint firstItem="9yO-TY-WOA" firstAttribute="leading" secondItem="i61-AY-QVD" secondAttribute="trailing" id="rxJ-qk-DiE"/>
+                            <constraint firstItem="klv-6S-IiM" firstAttribute="top" secondItem="UAf-UT-UdS" secondAttribute="bottom" id="sFo-cU-195"/>
+                            <constraint firstAttribute="trailing" secondItem="9yO-TY-WOA" secondAttribute="trailing" id="tA6-Bk-Y73"/>
+                            <constraint firstItem="o4m-B4-RRs" firstAttribute="top" secondItem="YnC-Ug-g1P" secondAttribute="bottom" id="wPR-5A-EiE"/>
+                            <constraint firstItem="YnC-Ug-g1P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xyk-rc-p59"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputDisplay" destination="YmM-ho-Np3" id="j7Z-wf-LG6"/>
+                        <outlet property="outputDisplay" destination="Iuv-B3-9Ql" id="TNU-zP-daU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
