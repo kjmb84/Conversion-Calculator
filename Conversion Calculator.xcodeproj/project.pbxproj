@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1C8CEB1FD3C7EE004D8B77 /* ConverterClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1C8CEA1FD3C7EE004D8B77 /* ConverterClass.swift */; };
 		CC73CCD11FB6889600A03E07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73CCD01FB6889600A03E07 /* AppDelegate.swift */; };
 		CC73CCD61FB6889600A03E07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC73CCD41FB6889600A03E07 /* Main.storyboard */; };
 		CC73CCD81FB6889600A03E07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC73CCD71FB6889600A03E07 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC1C8CEA1FD3C7EE004D8B77 /* ConverterClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterClass.swift; sourceTree = "<group>"; };
 		CC73CCCD1FB6889600A03E07 /* Conversion Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Conversion Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC73CCD01FB6889600A03E07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC73CCD51FB6889600A03E07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				CC73CCD91FB6889600A03E07 /* LaunchScreen.storyboard */,
 				CC73CCDC1FB6889600A03E07 /* Info.plist */,
 				CC73CCFE1FB68AC900A03E07 /* ConverterViewController.swift */,
+				CC1C8CEA1FD3C7EE004D8B77 /* ConverterClass.swift */,
 			);
 			path = "Conversion Calculator";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				CC73CCD11FB6889600A03E07 /* AppDelegate.swift in Sources */,
 				CC73CCFF1FB68AC900A03E07 /* ConverterViewController.swift in Sources */,
+				CC1C8CEB1FD3C7EE004D8B77 /* ConverterClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +511,7 @@
 				CC73CCF71FB6889600A03E07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC73CCF81FB6889600A03E07 /* Build configuration list for PBXNativeTarget "Conversion CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +520,7 @@
 				CC73CCFA1FB6889600A03E07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC73CCFB1FB6889600A03E07 /* Build configuration list for PBXNativeTarget "Conversion CalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +529,7 @@
 				CC73CCFD1FB6889600A03E07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
